@@ -1,0 +1,57 @@
+body {
+  font-size: 16px;
+  line-height: 1.7;
+  font-family: "Roboto", sans-serif;
+  color: var(--color-primary);
+  background-color: var(--color-white-color);
+  &.lock {
+    overflow: hidden;
+  }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  list-style: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
+section,
+header,
+footer,
+.backdrop {
+  display: none;
+}
+.block {
+  display: block;
+}
+.container {
+  padding: 0 15px;
+
+  @media screen and (min-width: 480px) {
+    width: 480px;
+    margin: 0 auto;
+  }
+  @media screen and (min-width: 768px) {
+    width: 768px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 1200px;
+  }
+}
