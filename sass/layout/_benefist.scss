@@ -1,6 +1,10 @@
 .benefist {
-  padding-top: 94px;
-  padding-bottom: 94px;
+  display: inline-flex;
+  padding-top: 60px;
+  @media screen and (min-width: 1200px) {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
 
   &__icon {
     display: flex;
@@ -13,17 +17,25 @@
   }
   &__list {
     display: flex;
-    gap: 30px;
 
     &__item {
-      width: calc((100% - 30px) / 4);
+      flex-basis: calc((100% - 60px) / 2);
     }
-    &__item:nth-last-child(1) {
+    &__item:nth-last-child(4) {
       margin-right: 0px;
     }
   }
   &__list .benefist__item {
-    width: 270px;
+    width: 100%;
     margin-right: 30px;
+    @media screen and (min-width: 768px) {
+    }
+  }
+  &__paragraph {
+    font-size: 14px;
+    line-height: 1.7;
+    letter-spacing: 0.03em;
+    color: var(--color-icon);
+    margin-bottom: 30px;
   }
 }
