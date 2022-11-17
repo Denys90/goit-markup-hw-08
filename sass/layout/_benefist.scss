@@ -19,12 +19,13 @@
     @media screen and (min-width: 768px) {
       display: flex;
       flex-wrap: wrap;
+      justify-content: center;
       gap: 30px;
     }
   }
   &__item {
     @media screen and (min-width: 768px) {
-      flex-basis: calc((100% - 30px) / 2);
+      flex-basis: calc((100% - 60px) / 2);
     }
     @media screen and (min-width: 1200px) {
       flex-basis: calc((100% - 90px) / 4);
@@ -38,8 +39,6 @@
   &__list .benefist__item {
     width: 100%;
     margin-right: 30px;
-    @media screen and (min-width: 768px) {
-    }
   }
   &__paragraph {
     font-size: 14px;
