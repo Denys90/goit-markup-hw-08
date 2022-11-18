@@ -1,5 +1,5 @@
 .benefist {
-  display: inline-flex;
+  
   padding-top: 60px;
   @media screen and (min-width: 1200px) {
     padding-top: 94px;
@@ -19,7 +19,6 @@
     @media screen and (min-width: 768px) {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
       gap: 30px;
     }
   }
@@ -38,7 +37,6 @@
   }
   &__list .benefist__item {
     width: 100%;
-    margin-right: 30px;
   }
   &__paragraph {
     font-size: 14px;

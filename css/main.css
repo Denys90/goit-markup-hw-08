@@ -934,6 +934,7 @@ ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-left: 12px;
   padding: 10px 28px;
 }
 .subscribe-form__input:hover, .subscribe-form__input:focus {
@@ -1316,9 +1317,6 @@ ul {
 }
 
 .benefist {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
   padding-top: 60px;
 }
 @media screen and (min-width: 1200px) {
@@ -1349,9 +1347,6 @@ ul {
     display: flex;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
     gap: 30px;
   }
 }
@@ -1374,7 +1369,6 @@ ul {
 }
 .benefist__list .benefist__item {
   width: 100%;
-  margin-right: 30px;
 }
 .benefist__paragraph, .card-set__paragraph {
   font-size: 14px;
