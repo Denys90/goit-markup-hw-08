@@ -90,7 +90,6 @@
       letter-spacing: 0.03em;
       color: var(--color-primary);
     }
-    
   }
   &__control {
     position: relative;
@@ -121,16 +120,23 @@
   }
   &__form-title {
     display: flex;
+    align-items: center;
     justify-content: center;
+
     margin-bottom: 12px;
     color: var(--color-primary);
     font-weight: 700;
     font-size: 20px;
-    line-height: 1.1;
+    line-height: 1.5;
     letter-spacing: 0.03em;
+    width: 370px;
+    height: 60px;
 
     @media screen and (min-width: 768px) {
-      width: 370px;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 1.1;
+      letter-spacing: 0.03em;
     }
   }
   .backdrop__checkbox {

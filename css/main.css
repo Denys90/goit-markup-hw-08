@@ -617,6 +617,9 @@ ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -624,12 +627,17 @@ ul {
   color: var(--color-primary);
   font-weight: 700;
   font-size: 20px;
-  line-height: 1.1;
+  line-height: 1.5;
   letter-spacing: 0.03em;
+  width: 370px;
+  height: 60px;
 }
 @media screen and (min-width: 768px) {
   .backdrop__form-title {
-    width: 370px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.1;
+    letter-spacing: 0.03em;
   }
 }
 .backdrop .backdrop__checkbox {
@@ -807,12 +815,12 @@ ul {
 }
 @media screen and (min-width: 768px) {
   .hero__canvas {
-    background-image: url(../images/header-tablet-354.jpg);
+    background-image: var(--hero-overlay), url(../images/header-tablet-354.jpg);
   }
 }
 @media screen and (min-width: 768px) and (min-device-pixel-ratio: 2), screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 768px) and (min-resolution: 192dpi), screen and (min-width: 768px) and (min-resolution: 2dppx) {
   .hero {
-    background-image: var(--hero-overlay) url(../images/header-tablet-708.jpg);
+    background-image: var(--hero-overlay), url(../images/header-tablet-708.jpg);
   }
 }
 @media screen and (min-width: 1200px) {
@@ -836,7 +844,7 @@ ul {
 }
 @media screen and (min-width: 1200px) and (min-device-pixel-ratio: 2), screen and (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 1200px) and (min-resolution: 192dpi), screen and (min-width: 1200px) and (min-resolution: 2dppx) {
   .hero {
-    background-image: url(../images/header-desktop-3200.jpg);
+    background-image: var(--hero-overlay), url(../images/header-desktop-3200.jpg);
   }
 }
 .hero__title {

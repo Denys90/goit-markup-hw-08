@@ -26,14 +26,14 @@
   }
   @media screen and (min-width: 768px) {
     &__canvas {
-      background-image: url(../images/header-tablet-354.jpg);
+      background-image:var(--hero-overlay), url(../images/header-tablet-354.jpg);
     }
 
     @media screen and (min-device-pixel-ratio: 2),
       (min-resolution: 192dpi),
       (min-resolution: 2dppx) {
       & {
-        background-image: var(--hero-overlay) url(../images/header-tablet-708.jpg);
+        background-image: var(--hero-overlay), url(../images/header-tablet-708.jpg);
       }
     }
   }
@@ -55,7 +55,7 @@
       (min-resolution: 192dpi),
       (min-resolution: 2dppx) {
       & {
-        background-image: url(../images/header-desktop-3200.jpg);
+        background-image: var(--hero-overlay),url(../images/header-desktop-3200.jpg);
       }
     }
   }
