@@ -17,7 +17,7 @@
             ><span class="logo__slog">Web</span>Studio
           </a>
           <button class="menu-toggle" type="button" aria-expanded="false" data-open-menu>
-            <svg width="40" height="40">
+            <svg class="menu-toggle__icon" width="40" height="40">
               <use href="./styles/icons/icons.svg#icon-burger-menu"></use>
             </svg>
           </button>
@@ -124,15 +124,8 @@
                   srcset="./images/box1.webp 1x, ./images/box1-900.webp 2x"
                   type="image/webp"
                 />
-                <img
-                  srcset="./images/box1.jpg x1,
-                  ./images/box1-900.jpg x2"
-                  type="image/jpg"
-                  class="img"
-                  src="./images/box1.jpg"
-                  width="370"
-                  alt="Розмітка сайту!"
-                />
+                <source srcset="./images/box1.jpg 1x, ./images/box1-900.jpg 2x" />
+                <img class="img" src="./images/box1.jpg" width="370" alt="Розмітка сайту!" />
               </picture>
             </li>
             <li class="activity__item">
@@ -141,12 +134,11 @@
               </div>
               <picture>
                 <source
-                  srcset="./images/box2.webp x1, ./images/box2-900.webp x2"
+                  srcset="./images/box2.webp 1x, ./images/box2-900.webp 2x"
                   type="image/webp"
                 />
                 <img
                   srcset="./images/box2.jpg 1x, ./images/box2-900.jpg 2x"
-                  type="image/jpg"
                   class="img"
                   src="./images/box2.jpg"
                   width="370"
@@ -161,15 +153,12 @@
               <picture>
                 <source
                   type="image/webp"
-                  srcset="
-                ./images/box3.webp x1,
-                ./images/box3-900.webp 2x"
+                  srcset="./images/box3.webp 1x, ./images/box3-900.webp 2x"
                 />
                 <img
                   class="img"
                   srcset="./images/box3.jpg 1x, ./images/box3-900.jpg 2x"
                   src="./images/box3.jpg"
-                  type="image/jpg"
                   alt="Колористика"
                 />
               </picture>
@@ -184,52 +173,61 @@
             <li class="team__item">
               <picture>
                 <source
+                  media="(max-width: 767px)"
                   srcset="
-              ./images/mobile/produkt-designer-450.webp x1,
-                ./images/mobile/produkt-designer-900.webp x2,
-                ./images/mobile/produkt-designer-1350.webp x3"
+                    ./images/mobile/produkt-designer-450.webp  1x,
+                    ./images/mobile/produkt-designer-900.webp  2x,
+                    ./images/mobile/produkt-designer-1350.webp 3x
+                  "
                   type="image/webp"
+                />
+                <source
+                  srcset="
+                    ./images/mobile/produkt-designer-450.jpg  1x,
+                    ./images/mobile/produkt-designer-900.jpg  2x,
+                    ./images/mobile/produkt-designer-1350.jpg 3x
+                  "
                   media="(max-width: 767px)"
                 />
-                <source srcset=" ./images/mobile/produkt-designer-450.jpg x1,
-                ./images/mobile/produkt-designer-900.jpg x2,
-                ./images/mobile/produkt-designer-1350.jpg x3" type="i media="(max-width: 767px)" />
                 <source
                   srcset="
-              ./images/tablet/produkt-designer-354.webp x1,
-                ./images/tablet/produkt-designer-708.webp x2,
-                ./images/tablet/produkt-designer-1062.webp x3"
+                    ./images/tablet/produkt-designer-354.webp  1x,
+                    ./images/tablet/produkt-designer-708.webp  2x,
+                    ./images/tablet/produkt-designer-1062.webp 3x
+                  "
                   type="image/webp"
-                  media="(max-width: 1199px)"
+                  media="(min-width: 768px)"
                 />
                 <source
                   srcset="
-              ./images/tablet/produkt-designer-354.jpg x1,
-                ./images/tablet/produkt-designer-708.jpg x2,
-                ./images/tablet/produkt-designer-1062.jpg x3"
-                  type="image/jpg"
-                  media="(max-width: 1199px)"
+                    ./images/tablet/produkt-designer-354.jpg  1x,
+                    ./images/tablet/produkt-designer-708.jpg  2x,
+                    ./images/tablet/produkt-designer-1062.jpg 3x
+                  "
+                  media="(min-width: 768px)"
                 />
                 <source
                   srcset="
-                 ./images/desktop/produkt-designer-270.jpg x1,
-                ./images/desktop/produkt-designer-540.jpg x2,
-                ./images/desktop/produkt-designer-810.jpg x3"
+                    ./images/desktop/produkt-designer-270.webp 1x,
+                    ./images/desktop/produkt-designer-540.webp 2x,
+                    ./images/desktop/produkt-designer-810.webp 3x
+                  "
                   type="image/webp"
                   media="(min-width: 1200px)"
                 />
                 <source
                   srcset="
-                  ./images/desktop/produkt-designer-270.jpg x1,
-                ./images/desktop/produkt-designer-540.jpg x2,
-                ./images/desktop/produkt-designer-810.jpg x3"
+                    ./images/desktop/produkt-designer-270.jpg 1x,
+                    ./images/desktop/produkt-designer-540.jpg 2x,
+                    ./images/desktop/produkt-designer-810.jpg 3x
+                  "
                   type="image/jpg"
                   media="(min-width: 1200px)"
                 />
                 <img
                   class="team__item-img"
                   type="image/jpg"
-                  src="./images/mobile/produkt-designer-450.jpg"
+                  src="./images/desktop/produkt-designer-270.jpg"
                   alt="Продукт дизайнер"
                 />
               </picture>
@@ -272,63 +270,59 @@
             <li class="team__item">
               <picture>
                 <source
+                  media="(max-width: 767px)"
                   srcset="
                     ./images/mobile/front-dev-450.webp  1x,
                     ./images/mobile/front-dev-900.webp  2x,
                     ./images/mobile/front-dev-1350.webp 3x
                   "
                   type="image/webp"
-                  media="(max-width: 767px)"
                 />
                 <source
+                  media="(max-width: 767px)"
                   srcset="
                     ./images/mobile/front-dev-450.jpg  1x,
                     ./images/mobile/front-dev-900.jpg  2x,
                     ./images/mobile/front-dev-1350.jpg 3x
                   "
-                  type="image/jpg"
-                  media="(max-width: 767px)"
                 />
                 <source
+                  media="(min-width: 768px)"
                   srcset="
                     ./images/tablet/front-dev-354.webp  1x,
                     ./images/tablet/front-dev-708.webp  2x,
                     ./images/tablet/front-dev-1062.webp 3x
                   "
                   type="image/webp"
-                  media="(max-width: 1199px)"
                 />
                 <source
+                  media="(min-width: 768px)"
                   srcset="
                     ./images/tablet/front-dev-354.jpg  1x,
                     ./images/tablet/front-dev-708.jpg  2x,
                     ./images/tablet/front-dev-1062.jpg 3x
                   "
-                  type="image/jpg"
-                  media="(max-width: 1199px)"
                 />
                 <source
+                  media="(min-width: 1200px)"
                   srcset="
                     ./images/desktop/front-dev-270.webp 1x,
                     ./images/desktop/front-dev-540.webp 2x,
                     ./images/desktop/front-dev-810.webp 3x
                   "
                   type="image/webp"
-                  media="(min-width: 1200px)"
                 />
                 <source
+                  media="(min-width: 1200px)"
                   srcset="
                     ./images/desktop/front-dev-270.jpg 1x,
                     ./images/desktop/front-dev-540.jpg 2x,
                     ./images/desktop/front-dev-810.jpg 3x
                   "
-                  type="image/jpg"
-                  media="(min-width: 1200px)"
                 />
                 <img
                   class="team__item-img"
-                  type="image/jpg"
-                  src="./images/mobile/front-dev-450.jpg"
+                  src="./images/desktop/front-dev-270.jpg"
                   alt="веб-розробник"
                 />
               </picture>
@@ -370,63 +364,59 @@
             <li class="team__item">
               <picture>
                 <source
+                  media="(max-width: 767px)"
                   srcset="
                     ./images/mobile/marketing-450.webp   1x,
                     ./images/mobile/marketing-900.webp   2x,
                     ./images//mobile/marketing-1350.webp 3x
                   "
                   type="image/webp"
-                  media="max-width: 767px"
                 />
                 <source
+                  media="(max-width: 767px)"
                   srcset="
                     ./images/mobile/marketing-450.jpg   1x,
                     ./images/mobile/marketing-900.jpg   2x,
                     ./images//mobile/marketing-1350.jpg 3x
                   "
-                  type="image/jpg"
-                  media="max-width: 767px"
                 />
                 <source
+                  media="(min-width: 768px)"
                   srcset="
                     ./images/tablet/marketing-354.webp  1x,
                     ./images/tablet/marketing-708.webp  2x,
                     ./images/tablet/marketing-1062.webp 3x
                   "
                   type="image/webp"
-                  media="max-width: 1199px"
                 />
                 <source
+                  media="(min-width: 768px)"
                   srcset="
                     ./images/tablet/marketing-354.jpg  1x,
                     ./images/tablet/marketing-708.jpg  2x,
                     ./images/tablet/marketing-1062.jpg 3x
                   "
-                  type="image/jpg"
-                  media="max-width: 1199px"
                 />
                 <source
+                  media="(min-width: 1200px)"
                   srcset="
                     ./images/desktop/marketing-270.webp 1x,
                     ./images/desktop/marketing-540.webp 2x,
                     ./images/desktop/marketing-810.webp 3x
                   "
                   type="image/webp"
-                  media="min-width: 1200px"
                 />
                 <source
+                  media="(min-width: 1200px)"
                   srcset="
-                    ./images/desktop/marketing-270.jpg,
-                    ./images/desktop/marketing-540.jpg,
-                    ./images/desktop/marketing-810.jpg
+                    ./images/desktop/marketing-270.jpg 1x,
+                    ./images/desktop/marketing-540.jpg 2x,
+                    ./images/desktop/marketing-810.jpg 3x
                   "
-                  type="image/jpg"
-                  media="min-width: 1200px"
                 />
                 <img
                   class="team__item-img"
-                  type="image/jpg"
-                  src="./images/mobile/marketing-450.jpg"
+                  src="./images/desktop/marketing-270.jpg"
                   alt="Маркетолог"
                 />
               </picture>
@@ -468,64 +458,60 @@
             <li class="team__item">
               <picture>
                 <source
+                  media="(max-width: 767px)"
                   srcset="
                     ./images/mobile/ui-450.webp  1x,
                     ./images/mobile/ui-900.webp  2x,
                     ./images/mobile/ui-1350.webp 3x
                   "
                   type="image/webp"
-                  media="(min-width: 767px)"
                 />
                 <source
+                  media="(max-width: 768px)"
                   srcset="
                     ./images/mobile/ui-450.jpg  1x,
                     ./images/mobile/ui-900.jpg  2x,
                     ./images/mobile/ui-1350.jpg 3x
                   "
                   type="image/jpg"
-                  media="(min-width: 767px)"
                 />
                 <source
+                  media="(min-width: 768px)"
                   srcset="
                     ./images/tablet/ui-354.webp  1x,
                     ./images/tablet/ui-708.webp  2x,
                     ./images/tablet/ui-1062.webp 3x
                   "
                   type="image/webp"
-                  media="(min-width: 1199px)"
                 />
                 <source
+                  media="(min-width: 767px)"
                   srcset="
                     ./images/tablet/ui-354.jpg  1x,
                     ./images/tablet/ui-708.jpg  2x,
                     ./images/tablet/ui-1062.jpg 3x
                   "
                   type="image/jpg"
-                  media="(min-width: 1199px)"
                 />
                 <source
+                  media="(min-width: 1200px)"
                   srcset="
                     ./images/desktop/ui-270.webp 1x,
                     ./images/desktop/ui-540.webp 2x,
                     ./images/desktop/ui-810.webp 3x
                   "
                   type="image/webp"
-                  media="(min-width: 1200px)"
                 />
                 <source
+                  media="(min-width: 1200px)"
                   srcset="
                     ./images/desktop/ui-270.jpg 1x,
                     ./images/desktop/ui-540.jpg 2x,
                     ./images/desktop/ui-810.jpg 3x
                   "
                   type="image/jpg"
-                  media="(min-width: 1200px)"
                 />
-                <img
-                  class="team__item-img"
-                  src="./images/desktop/ui-270.jpg"
-                  alt="Дизайнер"
-                />
+                <img class="team__item-img" src="./images/desktop/ui-270.jpg" alt="Дизайнер" />
               </picture>
               <div class="team__employee">
                 <h3 class="team__name feature-title">Михайло Єрмаков</h3>
@@ -778,12 +764,12 @@
     </div>
     <div class="mobile__backdrop" data-menu-container>
       <div class="mobile__modal">
-        <button class="mobile-menu__btn-close" type="button" data-close-menu>
-          <svg class="mobile-menu__icon" width="18.67" height="18.67">
-            <use href="./styles/icons/icons.svg#icon-invis-btn"></use>
-          </svg>
-        </button>
         <div class="mobile-menu">
+          <button class="mobile-menu__btn-close" type="button" data-close-menu>
+            <svg class="mobile-menu__icon" width="18.67" height="18.67">
+              <use href="./styles/icons/icons.svg#icon-invis-btn"></use>
+            </svg>
+          </button>
           <nav class="mobile-menu__navigation">
             <ul>
               <li>

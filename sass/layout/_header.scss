@@ -86,3 +86,7 @@
     display: none;
   }
 }
+.menu-toggle:hover,
+.menu-toggle:focus {
+  color: var(--color-thirdary);
+}

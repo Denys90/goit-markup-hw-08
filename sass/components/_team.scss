@@ -1,19 +1,18 @@
 .team {
   padding-top: 60px;
   padding-bottom: 60px;
+  justify-content: center;
 
   background: var(--color-light-gray);
 
   @media screen and (min-width: 1200px) {
-    padding-top: 94px;
+    padding: 94px 0;
   }
 
   &__list {
-    @media screen and (min-width: 480px) {
-      display: flex;
-      gap: 30px;
-      flex-wrap: wrap;
-    }
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
   }
 
   &__item {
@@ -22,6 +21,7 @@
     @media screen and (min-width: 768px) {
       flex-basis: calc((100% - 30px) / 2);
     }
+
     @media screen and (min-width: 1200px) {
       flex-basis: calc((100% - 90px) / 4);
     }

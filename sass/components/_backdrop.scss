@@ -18,7 +18,9 @@
     background-color: var(--color-white-color);
     box-shadow: var(--color-box-shadow);
     border-radius: 4px;
-
+    @media screen and (max-width: 450px) {
+      width: 100%;
+    }
     @media screen and (min-width: 1200px) {
       position: absolute;
       padding: 40px;

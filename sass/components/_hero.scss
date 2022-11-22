@@ -5,10 +5,6 @@
   text-align: center;
   padding: 118px 0;
 
-  @media screen and (min-width: 1200px) {
-    padding: 200px 0;
-  }
-
   &__canvas {
     align-items: center;
     padding: 118px 0;
@@ -26,7 +22,7 @@
   }
   @media screen and (min-width: 768px) {
     &__canvas {
-      background-image:var(--hero-overlay), url(../images/header-tablet-354.jpg);
+      background-image: var(--hero-overlay), url(../images/header-tablet-354.jpg);
     }
 
     @media screen and (min-device-pixel-ratio: 2),
@@ -44,6 +40,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 200px 0;
       max-width: 1600px;
       background-image: var(--hero-overlay), url(../images/header-desktop-1600.jpg);
 
@@ -55,7 +52,7 @@
       (min-resolution: 192dpi),
       (min-resolution: 2dppx) {
       & {
-        background-image: var(--hero-overlay),url(../images/header-desktop-3200.jpg);
+        background-image: var(--hero-overlay), url(../images/header-desktop-3200.jpg);
       }
     }
   }
