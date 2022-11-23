@@ -81,6 +81,7 @@
   height: 40px;
   border: none;
   background-color: var(--color-white-color);
+  transition:  fill var(--color-hover-animation);
 
   @media screen and (min-width: 768px) {
     display: none;
@@ -88,5 +89,6 @@
 }
 .menu-toggle:hover,
 .menu-toggle:focus {
-  color: var(--color-thirdary);
+  fill: var(--color-thirdary);
+
 }

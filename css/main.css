@@ -1219,10 +1219,12 @@ ul {
   right: 15px;
   border: none;
   background-color: var(--color-white-color);
-  color: var(--color-secondary);
+  color: var(--color-thirdary);
+  -webkit-transition: fill var(--color-hover-animation);
+  transition: fill var(--color-hover-animation);
 }
 .mobile-menu__btn-close:hover, .mobile-menu__btn-close:focus {
-  color: var(--color-secondary);
+  fill: var(--color-thirdary);
 }
 .mobile-menu__navigation {
   margin-bottom: 306px;
@@ -1412,6 +1414,8 @@ ul {
   height: 40px;
   border: none;
   background-color: var(--color-white-color);
+  -webkit-transition: fill var(--color-hover-animation);
+  transition: fill var(--color-hover-animation);
 }
 @media screen and (min-width: 768px) {
   .menu-toggle {
@@ -1421,7 +1425,7 @@ ul {
 
 .menu-toggle:hover,
 .menu-toggle:focus {
-  color: var(--color-thirdary);
+  fill: var(--color-thirdary);
 }
 
 .benefist {
@@ -1682,6 +1686,16 @@ ul {
   transition: -webkit-transform var(--color-hover-animation), -webkit-transition-duration var(--color-hover-animation);
   transition: transform var(--color-hover-animation), transition-duration var(--color-hover-animation);
   transition: transform var(--color-hover-animation), transition-duration var(--color-hover-animation), -webkit-transform var(--color-hover-animation), -webkit-transition-duration var(--color-hover-animation);
+}
+@media screen and (min-width: 768px) {
+  .card-set__text {
+    padding: 49px 24px 77px 24px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .card-set__text {
+    padding: 63px 24px;
+  }
 }
 .card-set__item:hover .card-set__text {
   -webkit-transform: translatey(0);

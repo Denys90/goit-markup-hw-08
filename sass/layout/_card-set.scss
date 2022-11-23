@@ -60,6 +60,13 @@
 
     transition: transform var(--color-hover-animation),
       transition-duration var(--color-hover-animation);
+
+      @media screen and (min-width: 768px) {
+        padding: 49px 24px 77px 24px;
+      }
+      @media screen and (min-width: 1200px) {
+        padding: 63px 24px;
+      }
   }
   &__item:hover .card-set__text {
     transform: translatey(0);

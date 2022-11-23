@@ -54,10 +54,12 @@
     right: 15px;
     border: none;
     background-color: var(--color-white-color);
-    color: var(--color-secondary);
+    color: var(--color-thirdary);
+
+    transition: fill var(--color-hover-animation);
     &:hover,
     &:focus {
-      color: var(--color-secondary);
+      fill: var(--color-thirdary);
     }
   }
   &__navigation {
