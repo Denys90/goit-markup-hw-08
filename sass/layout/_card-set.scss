@@ -1,16 +1,18 @@
 .card-set {
   display: flex;
   flex-wrap: wrap;
-  
+  @media screen and (max-width: 767px) {
+  justify-content: center;
+}
 
   &__item {
     width: 370px;
     margin-bottom: 30px;
-  
 
     @media screen and(min-width: 768px) {
-      flex-basis: calc((100% - 60px) / 2);
+      flex-basis: calc((100% - 30px) / 2 );
       margin-right: 30px;
+      
     }
     @media screen and(min-width: 768px) {
       &__item:nth-child(2n) {
@@ -22,7 +24,7 @@
     // }
 
     @media screen and(min-width: 1200px) {
-      flex-basis: calc((100% - 90px) / 3);
+      flex-basis: calc((100% - 60px) / 3);
     }
   }
   @media screen and(min-width: 1200px) {
@@ -61,12 +63,12 @@
     transition: transform var(--color-hover-animation),
       transition-duration var(--color-hover-animation);
 
-      @media screen and (min-width: 768px) {
-        padding: 49px 24px 77px 24px;
-      }
-      @media screen and (min-width: 1200px) {
-        padding: 63px 24px;
-      }
+    @media screen and (min-width: 768px) {
+      padding: 49px 24px 77px 24px;
+    }
+    @media screen and (min-width: 1200px) {
+      padding: 63px 24px;
+    }
   }
   &__item:hover .card-set__text {
     transform: translatey(0);
@@ -88,16 +90,35 @@
     margin-top: 0px;
     margin-bottom: 4px;
     color: var(--color-primary);
-
+    letter-spacing: 0.03em;
     font-size: 18px;
     line-height: 2;
     text-decoration: none;
+    @media screen and (min-width: 768px) and (max-width: 1200px) {
+       letter-spacing: 0.06em;
+    }
   }
   &__paragraph {
     font-size: 16px;
     line-height: 1.9;
     letter-spacing: 0.03em;
     color: var(--color-icon);
+    
+    @media screen and (min-width: 1200px) {
+      font-size: 14px;
+      line-height: 1.7;
+      letter-spacing: 0.03em;
+      color: var(--color-icon);
+    }
+  }
+  &__paragraph-one {
+     font-size: 16px;
+    line-height: 1.9;
+    letter-spacing: 0.03em;
+    color: var(--color-icon);
+    @media screen and (min-width: 768px) and (max-width: 1200px) {
+      margin-bottom: 36px;
+    }
     @media screen and (min-width: 1200px) {
       font-size: 14px;
       line-height: 1.7;
