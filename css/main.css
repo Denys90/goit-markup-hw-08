@@ -460,20 +460,17 @@ ul {
 }
 .backdrop__modal {
   position: absolute;
-  padding: 40px;
+  padding: 32px;
   top: 50%;
   left: 50%;
+  width: 100vw;
+  height: 100vh;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   background-color: var(--color-white-color);
   -webkit-box-shadow: var(--color-box-shadow);
           box-shadow: var(--color-box-shadow);
   border-radius: 4px;
-}
-@media screen and (max-width: 450px) {
-  .backdrop__modal {
-    width: 100%;
-  }
 }
 @media screen and (min-width: 1200px) {
   .backdrop__modal {
@@ -618,14 +615,18 @@ ul {
   fill: var(--color-thirdary);
 }
 .backdrop__checkbox-label {
+  position: relative;
   display: block;
-  padding-left: 38px;
-  font-size: 12px;
-  line-height: 1.16;
-  letter-spacing: 0.03em;
-  color: var(--color-secondary);
+  text-align: center;
   margin-bottom: 30px;
-  cursor: pointer;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: var(--color-secondary);
 }
 .backdrop__checkbox-label a {
   color: var(--color-thirdary);
@@ -664,40 +665,6 @@ ul {
             justify-content: center;
   }
 }
-.backdrop .backdrop__checkbox {
-  position: relative;
-}
-.backdrop .backdrop__checkbox-control {
-  width: 16px;
-  height: 15px;
-  position: absolute;
-  top: 50%;
-  left: 15px;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  background-color: var(--color-white-color);
-  border: 2px solid var(--color-primary);
-  border-radius: 2px;
-  z-index: 0;
-  -webkit-transition: border-color var(--color-hover-animation), background-color var(--color-hover-animation), fill var(--color-hover-animation);
-  transition: border-color var(--color-hover-animation), background-color var(--color-hover-animation), fill var(--color-hover-animation);
-}
-.backdrop .backdrop__checkbox-input:hover + .backdrop__checkbox-control, .backdrop .backdrop__checkbox-input:focus + .backdrop__checkbox-control {
-  border-color: var(--color-thirdary);
-}
-.backdrop .backdrop__checkbox-input:checked + .backdrop__checkbox-control {
-  background-color: var(--color-thirdary);
-}
-.backdrop .backdrop__checkbox-check {
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  z-index: 1;
-  fill: var(--color-white-color);
-}
 .backdrop__label {
   display: block;
   font-weight: 400;
@@ -719,6 +686,58 @@ ul {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+.backdrop__checkbox-input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+.backdrop__checkbox-input:hover::before, .backdrop__checkbox-input:focus::before {
+  border-color: var(--color-button-hover);
+}
+.backdrop__checkbox-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  border-radius: 2px;
+  cursor: pointer;
+  opacity: 0;
+  fill: var(--color-white-color);
+  -webkit-transition: opacity var(--color-hover-animation);
+  transition: opacity var(--color-hover-animation);
+}
+.backdrop__checkbox-input:checked + .backdrop__checkbox-icon {
+  opacity: 1;
+  background: var(--color-button-hover);
+}
+.backdrop__checkbox-input::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  display: block;
+  width: 16px;
+  height: 15px;
+  border: 2px solid var(--color-primary);
+  border-radius: 2px;
+  -webkit-transition: border-color var(--color-hover-animation);
+  transition: border-color var(--color-hover-animation);
+}
+.backdrop__terms-link {
+  color: var(--color-button-hover);
+}
+.backdrop__checkbox-field {
+  position: relative;
+  display: block;
+  margin-bottom: 4px;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+  color: var(--color-secondary);
 }
 
 .button {
@@ -1177,26 +1196,42 @@ ul {
 }
 
 .mobile__modal {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  padding: 48px 40px;
-  height: 100%;
-  width: 100%;
-  -webkit-transform: translate(100%);
-          transform: translate(100%);
+  width: 100vw;
+  height: 100vh;
+  padding: 32px;
+  background-color: #ffffff;
   z-index: 999;
-  background-color: var(--color-white-color);
-  -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
-  -webkit-transition: -webkit-transform var(--color-hover-animation);
-  transition: -webkit-transform var(--color-hover-animation);
-  transition: transform var(--color-hover-animation);
-  transition: transform var(--color-hover-animation), -webkit-transform var(--color-hover-animation);
-  overflow-y: auto;
+  overflow-y: scroll;
+  -webkit-transform: translateX(150%);
+          transform: translateX(150%);
+  -webkit-transition: -webkit-transform 250ms ease-in-out;
+  transition: -webkit-transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out, -webkit-transform 250ms ease-in-out;
+}
+@media screen and (min-width: 321px) {
+  .mobile__modal {
+    padding: 48px 40px;
+  }
 }
 
-.mobile-menu .mobile-menu__btn-close {
+.mobile-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100%;
+}
+.mobile-menu__btn-close {
   position: absolute;
   top: 10px;
   right: 15px;
@@ -1211,8 +1246,14 @@ ul {
           justify-content: center;
 }
 .mobile-menu__icon {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
+}
+@media screen and (min-width: 321px) {
+  .mobile-menu__icon {
+    width: 40px;
+    height: 40px;
+  }
 }
 .mobile-menu__btn-close {
   position: absolute;
@@ -1228,34 +1269,53 @@ ul {
   fill: var(--color-thirdary);
 }
 .mobile-menu__navigation {
-  margin-bottom: 306px;
-}
-.mobile-menu .mobile-menu__link {
   display: block;
-  padding-bottom: 32px;
+}
+.mobile-menu__link {
+  display: block;
+  padding-bottom: 20px;
   font-weight: 500;
-  font-size: 40px;
-  line-height: 47px;
+  font-size: 25px;
+  line-height: 20px;
   letter-spacing: 0.02em;
   text-decoration: none;
+  margin-bottom: 10px;
   color: var(--color-primary);
 }
-.mobile-menu .mobile-menu__link--current {
+.mobile-menu__link--current {
   color: var(--color-thirdary);
+}
+@media screen and (min-width: 321px) {
+  .mobile-menu__link {
+    font-size: 40px;
+    line-height: 47px;
+  }
+}
+.mobile-menu__contacts {
+  display: block;
+}
+.mobile-menu-list {
+  margin-bottom: 64px;
 }
 .mobile-menu__contacts-link-tel {
   display: block;
-  margin-bottom: 32px;
+  margin-bottom: 10px;
   font-weight: 500;
-  font-size: 34px;
+  font-size: 20px;
   line-height: 1.2;
   letter-spacing: 0.02em;
   text-decoration: none;
   color: var(--color-thirdary);
 }
+@media screen and (min-width: 321px) {
+  .mobile-menu__contacts-link-tel {
+    font-size: 34px;
+    margin-bottom: 32px;
+  }
+}
 .mobile-menu__contacts-link-email {
   display: block;
-  margin-bottom: 64px;
+  margin-bottom: 30px;
   font-weight: 500;
   font-size: 24px;
   line-height: 1.16;
@@ -1263,27 +1323,12 @@ ul {
   text-decoration: none;
   color: var(--color-secondary);
 }
-.mobile-menu__contacts-link-email {
-  display: block;
-  margin-bottom: 64px;
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 1.16;
-  letter-spacing: 0.02em;
-  text-decoration: none;
-  color: var(--color-secondary);
+@media screen and (min-width: 321px) {
+  .mobile-menu__contacts-link-email {
+    margin-bottom: 64px;
+  }
 }
-.mobile-menu__contacts-link-email {
-  display: block;
-  margin-bottom: 64px;
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 1.16;
-  letter-spacing: 0.02em;
-  text-decoration: none;
-  color: var(--color-secondary);
-}
-.mobile-menu .mobile-menu__socials {
+.mobile-menu__socials {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1294,20 +1339,37 @@ ul {
       flex-wrap: wrap;
   gap: 10px;
 }
-.mobile-menu .mobile-menu__socials-link {
+.mobile-menu__socials-link {
+  position: relative;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 12px;
   line-height: 1.22;
   letter-spacing: 0.02em;
   text-decoration: none;
   color: var(--color-thirdary);
-  padding-right: 10px;
-  border-right: 1px solid rgba(33, 33, 33, 0.2);
+  padding-right: 5px;
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
 }
-.mobile-menu .mobile-menu__socials:nth-last-child(1) {
-  border-right: none;
+@media screen and (min-width: 321px) {
+  .mobile-menu__socials-link {
+    font-size: 18px;
+  }
+}
+
+.menu-social__line::after {
+  position: absolute;
+  -webkit-transform: translateY(20%);
+          transform: translateY(20%);
+  margin-left: 5px;
+  content: "";
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  height: 20px;
+}
+@media screen and (min-width: 321px) {
+  .menu-social__line::after {
+    height: 14px;
+  }
 }
 
 .header {
@@ -1660,14 +1722,19 @@ ul {
 }
 @media screen and (min-width: 768px) {
   .card-set__item {
-    -ms-flex-preferred-size: calc((100% - 30px) / 2);
-        flex-basis: calc((100% - 30px) / 2);
+    -ms-flex-preferred-size: calc((100% - 60px) / 2);
+        flex-basis: calc((100% - 60px) / 2);
     margin-right: 30px;
   }
 }
 @media screen and (min-width: 768px) {
   .card-set__item__item:nth-child(2n) {
     margin-right: 0px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .card-set__item__item:nth-last-child(-n+1) {
+    margin-bottom: 0px;
   }
 }
 @media screen and (min-width: 1200px) {

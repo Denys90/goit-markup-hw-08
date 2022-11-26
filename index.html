@@ -740,22 +740,18 @@
             id="comment"
             placeholder="Введіть текст"
           ></textarea>
-          <div class="backdrop__checkbox">
-            <input
-              class="backdrop__checkbox-input visually-hidden"
-              type="checkbox"
-              name="checkbox"
-              id="checkbox"
-            />
-            <div class="backdrop__checkbox-control">
-              <svg class="backdrop__checkbox-check" width="16" height="15">
-                <use href="./styles/icons/icons.svg#icon-icon-check"></use>
+
+          <div class="backdrop__checkbox-field">
+            <label class="backdrop__checkbox-label">
+              <input class="backdrop__checkbox-input" type="checkbox" name="terms-checkbox" />
+              <svg class="backdrop__checkbox-icon" width="16" height="15">
+                <use href="./styles/icons/icons.svg#icon-modalka-vector"></use>
               </svg>
-            </div>
-            <label class="backdrop__checkbox-label" for="checkbox"
-              >Погоджуюся з розсилкою та приймаю <a href="#"> Умови договору </a></label
-            >
+              Погоджуюся з розсилкою та приймаю
+              <a href="#" class="backdrop__terms-link">Умови договору</a>
+            </label>
           </div>
+
           <button class="button backdrop__submit-button" type="submit">Відправити</button>
         </form>
       </div>
@@ -781,24 +777,35 @@
               </li>
             </ul>
           </nav>
-          <a class="mobile-menu__contacts-link-tel" href="tel:+380961111111"> +38 096 111 11 11 </a>
-          <a class="mobile-menu__contacts-link-email" href="mailto:info@devstudio.com">
-            info@devstudio.com
-          </a>
-          <ul class="mobile-menu__socials">
-            <li>
-              <a class="mobile-menu__socials-link" href="#">Instagram</a>
-            </li>
-            <li>
-              <a class="mobile-menu__socials-link" href="#">Twitter</a>
-            </li>
-            <li>
-              <a class="mobile-menu__socials-link" href="#">Facebook</a>
-            </li>
-            <li>
-              <a class="mobile-menu__socials-link" href="#">LinkedIn</a>
-            </li>
-          </ul>
+          <div class="mobile-menu__contacts">
+            <ul class="mobile-menu__contacts-list">
+              <li>
+                <a class="mobile-menu__contacts-link-tel" href="tel:+380961111111">
+                  +38 096 111 11 11
+                </a>
+              </li>
+              <li>
+                <a class="mobile-menu__contacts-link-email" href="mailto:info@devstudio.com">
+                  info@devstudio.com
+                </a>
+              </li>
+            </ul>
+
+            <ul class="mobile-menu__socials">
+              <li>
+                <a class="mobile-menu__socials-link menu-social__line" href="#">Instagram</a>
+              </li>
+              <li>
+                <a class="mobile-menu__socials-link menu-social__line" href="#">Twitter</a>
+              </li>
+              <li>
+                <a class="mobile-menu__socials-link menu-social__line" href="#">Facebook</a>
+              </li>
+              <li>
+                <a class="mobile-menu__socials-link menu-social__line" href="#">LinkedIn</a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
