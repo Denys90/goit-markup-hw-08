@@ -457,14 +457,17 @@ ul {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -ms-flex-preferred-size: calc(100% - 30px);
+      flex-basis: calc(100% - 30px);
 }
 .backdrop__modal {
   position: absolute;
   padding: 32px;
   top: 50%;
   left: 50%;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
+  min-height: 609px;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   background-color: var(--color-white-color);
@@ -472,19 +475,15 @@ ul {
           box-shadow: var(--color-box-shadow);
   border-radius: 4px;
 }
+@media screen and (max-width: 320px) {
+  .backdrop__modal {
+    padding: 15px;
+  }
+}
 @media screen and (min-width: 1200px) {
   .backdrop__modal {
-    position: absolute;
     padding: 40px;
-    top: 50%;
-    left: 50%;
     width: 528px;
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-    background-color: var(--color-white-color);
-    -webkit-box-shadow: var(--color-box-shadow);
-            box-shadow: var(--color-box-shadow);
-    border-radius: 4px;
   }
 }
 .backdrop__textarea {
@@ -499,7 +498,6 @@ ul {
   resize: none;
   -webkit-transition: border-color var(--color-hover-animation);
   transition: border-color var(--color-hover-animation);
-  margin-bottom: 20px;
 }
 .backdrop__textarea:focus, .backdrop__textarea:hover {
   border-color: var(--color-thirdary);
@@ -533,6 +531,12 @@ ul {
   line-height: 1.25;
   letter-spacing: 0.03em;
   color: var(--color-icon);
+}
+@media screen and (max-width: 320px) {
+  .backdrop__textarea {
+    height: 80px;
+    margin-bottom: 20px;
+  }
 }
 .backdrop__button {
   position: absolute;
@@ -607,6 +611,11 @@ ul {
   letter-spacing: 0.03em;
   color: var(--color-primary);
 }
+@media screen and (max-width: 320px) {
+  .backdrop__input {
+    height: 35px;
+  }
+}
 .backdrop__control {
   position: relative;
   margin-bottom: 10px;
@@ -619,7 +628,7 @@ ul {
   display: block;
   text-align: center;
   margin-bottom: 30px;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 1.71;
   letter-spacing: 0.03em;
   -webkit-box-orient: vertical;
@@ -630,6 +639,12 @@ ul {
 }
 .backdrop__checkbox-label a {
   color: var(--color-thirdary);
+}
+@media screen and (max-width: 450px) {
+  .backdrop__checkbox-label {
+    margin-bottom: 20px;
+    font-size: 8px;
+  }
 }
 @media screen and (min-width: 1200px) {
   .backdrop__checkbox-label {
@@ -651,9 +666,15 @@ ul {
   margin-bottom: 12px;
   color: var(--color-primary);
   font-weight: 700;
-  font-size: 20px;
-  line-height: 1.5;
+  font-size: 16px;
+  line-height: 1.2;
   letter-spacing: 0.03em;
+}
+@media screen and (min-width: 321px) {
+  .backdrop__form-title {
+    font-size: 20px;
+    line-height: 1.7;
+  }
 }
 @media screen and (min-width: 1200px) {
   .backdrop__form-title {
@@ -708,6 +729,16 @@ ul {
   -webkit-transition: opacity var(--color-hover-animation);
   transition: opacity var(--color-hover-animation);
 }
+@media screen and (max-width: 370px) {
+  .backdrop__checkbox-icon {
+    margin-left: 5px;
+  }
+}
+@media screen and (min-width: 370px) {
+  .backdrop__checkbox-icon {
+    margin-left: 10px;
+  }
+}
 .backdrop__checkbox-input:checked + .backdrop__checkbox-icon {
   opacity: 1;
   background: var(--color-button-hover);
@@ -726,6 +757,16 @@ ul {
   border-radius: 2px;
   -webkit-transition: border-color var(--color-hover-animation);
   transition: border-color var(--color-hover-animation);
+}
+@media screen and (max-width: 370px) {
+  .backdrop__checkbox-input::before {
+    margin-left: 5px;
+  }
+}
+@media screen and (min-width: 370px) {
+  .backdrop__checkbox-input::before {
+    margin-left: 10px;
+  }
 }
 .backdrop__terms-link {
   color: var(--color-button-hover);
@@ -1567,13 +1608,12 @@ ul {
   font-size: 14px;
   line-height: 1.7;
 }
+.footer__addresse-position {
+  margin-bottom: 60px;
+}
 @media screen and (min-width: 768px) and (max-width: 1200px) {
   .footer__addresse-position {
     margin-left: 76px;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 1200px) {
-  .footer__social-position {
     margin-right: 89px;
   }
 }
@@ -1665,6 +1705,9 @@ ul {
   line-height: 1.7;
   outline: none;
   letter-spacing: 0.03em;
+}
+.footer__social-position {
+  margin-bottom: 60px;
 }
 .footer__social-list {
   display: -webkit-box;
