@@ -85,6 +85,10 @@
   }
   &__social-position {
     margin-bottom: 60px;
+
+    @media screen and (min-width: 767px) and (max-width: 1199px) {
+      margin-right: 83px;
+    }
   }
 
   &__social-list {
