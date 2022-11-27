@@ -624,7 +624,10 @@ ul {
   font-size: 12px;
   line-height: 1.71;
   letter-spacing: 0.03em;
+  cursor: pointer;
   color: var(--color-secondary);
+  -webkit-transition: var(--color-hover-animation);
+  transition: var(--color-hover-animation);
 }
 .backdrop__checkbox-label::before {
   content: "";
@@ -636,6 +639,7 @@ ul {
   height: 15px;
   border: 2px solid var(--color-primary);
   border-radius: 2px;
+  cursor: pointer;
   -webkit-transition: border-color var(--color-hover-animation);
   transition: border-color var(--color-hover-animation);
 }
@@ -714,7 +718,7 @@ ul {
      -moz-appearance: none;
           appearance: none;
 }
-.backdrop__checkbox-input:hover::before, .backdrop__checkbox-input:focus::before {
+.backdrop__checkbox-label:hover::before, .backdrop__checkbox-label:focus::before {
   border-color: var(--color-button-hover);
 }
 .backdrop__checkbox-input:checked + .backdrop__checkbox-label::before {
