@@ -454,18 +454,14 @@ ul {
   background: rgba(0, 0, 0, 0.2);
   -webkit-transition: opacity var(--color-hover-animation), visibility var(--color-hover-animation);
   transition: opacity var(--color-hover-animation), visibility var(--color-hover-animation);
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -ms-flex-preferred-size: calc(100% - 30px);
-      flex-basis: calc(100% - 30px);
 }
 .backdrop__modal {
   position: absolute;
-  padding: 32px;
+  padding: 40px 20px;
   top: 50%;
   left: 50%;
-  width: 100%;
+  width: calc(100% - 30px);
+  max-width: 528px;
   min-height: 350px;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -479,10 +475,9 @@ ul {
     padding: 15px;
   }
 }
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 480px) {
   .backdrop__modal {
     padding: 40px;
-    width: 528px;
   }
 }
 .backdrop__textarea {
@@ -625,16 +620,24 @@ ul {
 .backdrop__checkbox-label {
   position: relative;
   display: block;
-  text-align: center;
   margin-bottom: 30px;
   font-size: 12px;
   line-height: 1.71;
   letter-spacing: 0.03em;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   color: var(--color-secondary);
+}
+.backdrop__checkbox-label::before {
+  content: "";
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+  display: inline-block;
+  margin-right: 8px;
+  width: 16px;
+  height: 15px;
+  border: 2px solid var(--color-primary);
+  border-radius: 2px;
+  -webkit-transition: border-color var(--color-hover-animation);
+  transition: border-color var(--color-hover-animation);
 }
 .backdrop__checkbox-label a {
   color: var(--color-thirdary);
@@ -642,7 +645,6 @@ ul {
 @media screen and (max-width: 450px) {
   .backdrop__checkbox-label {
     margin-bottom: 20px;
-    font-size: 8px;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -715,57 +717,9 @@ ul {
 .backdrop__checkbox-input:hover::before, .backdrop__checkbox-input:focus::before {
   border-color: var(--color-button-hover);
 }
-.backdrop__checkbox-icon {
-  position: absolute;
-  top: 50%;
-  left: 12px;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  border-radius: 2px;
-  cursor: pointer;
-  opacity: 0;
-  fill: var(--color-white-color);
-  -webkit-transition: opacity var(--color-hover-animation);
-  transition: opacity var(--color-hover-animation);
-}
-@media screen and (max-width: 370px) {
-  .backdrop__checkbox-icon {
-    margin-left: 5px;
-  }
-}
-@media screen and (min-width: 370px) {
-  .backdrop__checkbox-icon {
-    margin-left: 10px;
-  }
-}
-.backdrop__checkbox-input:checked + .backdrop__checkbox-icon {
-  opacity: 1;
-  background: var(--color-button-hover);
-}
-.backdrop__checkbox-input::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 12px;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  display: block;
-  width: 16px;
-  height: 15px;
-  border: 2px solid var(--color-primary);
-  border-radius: 2px;
-  -webkit-transition: border-color var(--color-hover-animation);
-  transition: border-color var(--color-hover-animation);
-}
-@media screen and (max-width: 370px) {
-  .backdrop__checkbox-input::before {
-    margin-left: 5px;
-  }
-}
-@media screen and (min-width: 370px) {
-  .backdrop__checkbox-input::before {
-    margin-left: 10px;
-  }
+.backdrop__checkbox-input:checked + .backdrop__checkbox-label::before {
+  border: 2px solid var(--color-thirdary);
+  background: var(--color-thirdary) url(../images/icons/vector-check.svg) no-repeat center/contain;
 }
 .backdrop__terms-link {
   color: var(--color-button-hover);
@@ -1390,7 +1344,7 @@ ul {
   letter-spacing: 0.02em;
   text-decoration: none;
   color: var(--color-thirdary);
-  padding-right: 5px;
+  padding-right: 10px;
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
 }
@@ -1401,18 +1355,14 @@ ul {
 }
 
 .menu-social__line::after {
-  position: absolute;
-  -webkit-transform: translateY(20%);
-          transform: translateY(20%);
-  margin-left: 5px;
   content: "";
+  position: absolute;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  top: 50%;
+  right: 0;
   border: 1px solid rgba(33, 33, 33, 0.2);
-  height: 20px;
-}
-@media screen and (min-width: 321px) {
-  .menu-social__line::after {
-    height: 14px;
-  }
+  height: 100%;
 }
 
 .header {
