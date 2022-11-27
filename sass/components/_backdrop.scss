@@ -66,8 +66,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     cursor: pointer;
     border-radius: 50%;
 
@@ -79,6 +79,10 @@
     &:hover,
     &:focus {
       fill: var(--color-button-hover);
+    }
+    @media screen and (min-width: 321px) {
+      width: 30px;
+    height: 30px;
     }
   }
   &__input {
@@ -160,11 +164,11 @@
     margin-bottom: 12px;
     color: var(--color-primary);
     font-weight: 700;
-    font-size: 16px;
+    font-size: 20px;
     line-height: 1.2;
     letter-spacing: 0.03em;
     
-    @media screen and (max-width: 450px) {
+    @media screen and (max-width: 325px) {
       font-size: 15px;
     }
     @media screen and (min-width: 1200px) {

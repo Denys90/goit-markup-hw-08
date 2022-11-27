@@ -544,8 +544,8 @@ ul {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   cursor: pointer;
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -557,6 +557,12 @@ ul {
 }
 .backdrop__button:hover, .backdrop__button:focus {
   fill: var(--color-button-hover);
+}
+@media screen and (min-width: 321px) {
+  .backdrop__button {
+    width: 30px;
+    height: 30px;
+  }
 }
 .backdrop__input {
   width: 100%;
@@ -664,11 +670,11 @@ ul {
   margin-bottom: 12px;
   color: var(--color-primary);
   font-weight: 700;
-  font-size: 16px;
+  font-size: 20px;
   line-height: 1.2;
   letter-spacing: 0.03em;
 }
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 325px) {
   .backdrop__form-title {
     font-size: 15px;
   }
