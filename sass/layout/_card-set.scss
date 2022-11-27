@@ -1,13 +1,11 @@
 .card-set {
   display: flex;
   flex-wrap: wrap;
-  background-color: green;
   @media screen and (max-width: 767px) {
     justify-content: center;
   }
 
   &__item {
-    width: 370px;
     margin-bottom: 30px;
   }
 

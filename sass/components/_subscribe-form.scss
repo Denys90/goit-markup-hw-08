@@ -8,8 +8,9 @@
     flex-direction: column;
     gap: 20px;
     align-items: center;
+  }
+  @media screen and (min-width: 1200px) {
     margin-left: auto;
-    margin-right: auto;
   }
 
   &__input {
